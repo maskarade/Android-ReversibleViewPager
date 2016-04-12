@@ -1,0 +1,22 @@
+.gradle/
+local.properties
+gradle.properties
+.idea/*.xml
+.idea/.*
+.idea/*/*.xml
+!.idea/copyright/*.xml
+!.idea/dictionaries/orma.xml
+!.idea/codeStyleSettings.xml
+*.iml
+.DS_Store
+/build/*
+processor/build/*
+library/build/*
+annotations/build/*
+example/build/*
+captures/
+.gradletasknamecache
+
+# gh-pages
+_site/
+
