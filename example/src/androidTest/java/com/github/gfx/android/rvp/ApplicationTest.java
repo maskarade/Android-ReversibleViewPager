@@ -1,4 +1,4 @@
-package com.github.gfx.android.reversibleviewpager;
+package com.github.gfx.android.rvp;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;

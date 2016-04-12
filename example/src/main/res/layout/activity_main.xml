@@ -11,7 +11,7 @@
              tools:context=".MainActivity"
         >
 
-    <com.github.gfx.android.reversibleviewpager.ReversibleViewPager
+    <com.github.gfx.android.rvp.ReversibleViewPager
             android:id="@+id/viewPager"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -23,5 +23,5 @@
                 android:layout_height="wrap_content"
                 />
 
-    </com.github.gfx.android.reversibleviewpager.ReversibleViewPager>
+    </com.github.gfx.android.rvp.ReversibleViewPager>
 </FrameLayout>

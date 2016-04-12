@@ -1,4 +1,4 @@
-<manifest package="com.github.gfx.android.reversibleviewpager">
+<manifest package="com.github.gfx.android.rvp">
 
     <application />
 </manifest>

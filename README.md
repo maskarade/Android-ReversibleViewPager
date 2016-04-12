@@ -1,13 +1,13 @@
 
-## ReversibleViewPager
+## RVP: ReversibleViewPager
 
-A [ViewPager](http://developer.android.com/intl/ja/reference/android/support/v4/view/ViewPager.html) variant with right-to-left orientation support.
+RVP is a [ViewPager](http://developer.android.com/intl/ja/reference/android/support/v4/view/ViewPager.html) variant with right-to-left orientation support.
 
 ## Getting Started
 
 ```gradle
 dependencies {
-    compile 'com.github.gfx.android.reversibleviewpager:reversibleviewpager:1.0.0'
+    compile 'com.github.gfx.android.rvp:reversibleviewpager:1.0.0'
 }
 ```
 
@@ -16,7 +16,7 @@ dependencies {
 `app:reversed="true"` reverses the orientation, or `ReversibleViewPager#setReverset(true)` for dynamic configuration.
 
 ```xml
-<com.github.gfx.android.reversibleviewpager.ReversibleViewPager
+<com.github.gfx.android.rvp.ReversibleViewPager
         android:id="@+id/viewPager"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -28,7 +28,7 @@ dependencies {
             android:layout_height="wrap_content"
             />
 
-</com.github.gfx.android.reversibleviewpager.ReversibleViewPager>
+</com.github.gfx.android.rvp.ReversibleViewPager>
 ```
 
 ## Original

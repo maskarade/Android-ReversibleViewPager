@@ -1,6 +1,6 @@
-package com.github.gfx.android.reversibleviewpager.example;
+package com.github.gfx.android.rvp.example;
 
-import com.github.gfx.android.reversibleviewpager.ReversibleViewPager;
+import com.github.gfx.android.rvp.ReversibleViewPager;
 
 import android.os.Bundle;
 import android.support.v4.view.PagerAdapter;
