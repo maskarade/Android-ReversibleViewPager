@@ -1,5 +1,5 @@
 
-## RVP: ReversibleViewPager
+## RVP: ReversibleViewPager [ ![Download](https://api.bintray.com/packages/gfx/maven/reversibleviewpager/images/download.svg) ](https://bintray.com/gfx/maven/reversibleviewpager/_latestVersion)
 
 RVP is a [ViewPager](http://developer.android.com/intl/ja/reference/android/support/v4/view/ViewPager.html) variant with right-to-left orientation support.
 
