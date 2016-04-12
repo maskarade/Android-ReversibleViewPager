@@ -6,7 +6,7 @@ import android.database.DataSetObserver;
 import android.os.Parcelable;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
-import android.support.v4.util.ArrayMap;
+import android.support.v4.util.SimpleArrayMap;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.util.AttributeSet;
@@ -14,15 +14,14 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 
-import java.util.Map;
-
 /**
  * Originated from https://github.com/konifar/droidkaigi2016/blob/master/app/src/main/java/io/github/droidkaigi/confsched/widget/RtlViewPager.java
  */
 public class ReversibleViewPager extends ViewPager {
 
     @NonNull
-    private final Map<OnPageChangeListener, ReverseOnPageChangeListener> reverseOnPageChangeListeners = new ArrayMap<>();
+    private final SimpleArrayMap<OnPageChangeListener, ReverseOnPageChangeListener> reverseOnPageChangeListeners
+            = new SimpleArrayMap<>();
 
     @Nullable
     private DataSetObserver dataSetObserver;
