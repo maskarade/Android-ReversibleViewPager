@@ -31,7 +31,7 @@ dependencies {
 }
 
 publish {
-    artifactId = 'orma'
+    artifactId = 'reversibleviewpager'
     desc = 'A ViewPager variant with right-to-left orientation support'
 
     def metadata = rootProject.ext.metadata
