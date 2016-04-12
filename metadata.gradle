@@ -1,0 +1,8 @@
+ext {
+    metadata = [
+            groupId   : 'com.github.gfx.android.rvp',
+            website   : 'https://github.com/gfx/ReversibleViewPager',
+            repository: 'git@github.com:gfx/ReversibleViewPager.git',
+            licences  : ['Apache-2.0']
+    ]
+}

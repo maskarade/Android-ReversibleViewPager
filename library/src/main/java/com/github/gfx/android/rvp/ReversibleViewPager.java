@@ -15,7 +15,9 @@ import android.view.View;
 import android.view.ViewGroup;
 
 /**
- * Originated from https://github.com/konifar/droidkaigi2016/blob/master/app/src/main/java/io/github/droidkaigi/confsched/widget/RtlViewPager.java
+ * A {@code ViewPager} that support {@link #setReversed(boolean)} to reverse the orientation.
+ *
+ * @see ViewPager
  */
 public class ReversibleViewPager extends ViewPager {
 
@@ -143,6 +145,11 @@ public class ReversibleViewPager extends ViewPager {
         suppressOnPageChangeListeners = false;
     }
 
+    /**
+     * It reverses the orientation. Default to {@code false}. This is affected by {@code app:reverse="true"} in XML elements.
+     *
+     * @param reversed {@code true} for reverse, right-to-left orientation
+     */
     public void setReversed(boolean reversed) {
         this.reversed = reversed;
     }
