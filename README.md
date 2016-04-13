@@ -7,7 +7,7 @@ RVP is a [ViewPager](http://developer.android.com/intl/ja/reference/android/supp
 
 ```gradle
 dependencies {
-    compile 'com.github.gfx.android.rvp:reversibleviewpager:1.0.0'
+    compile 'com.github.gfx.android.rvp:reversibleviewpager:1.0.1'
 }
 ```
 
