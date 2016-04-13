@@ -87,6 +87,45 @@ public class ReversibleViewPager extends ViewPager {
         super.setCurrentItem(convertPosition(item));
     }
 
+    @Override
+    public boolean arrowScroll(int direction) {
+        boolean handled;
+        if (direction == FOCUS_FORWARD || (reversed ? direction == FOCUS_LEFT : direction == FOCUS_RIGHT)) {
+            handled = moveToForward();
+        } else if (direction == FOCUS_BACKWARD || (reversed ? direction == FOCUS_RIGHT : direction == FOCUS_LEFT)) {
+            handled = moveToBackward();
+        } else {
+            throw new IllegalArgumentException("direction must be one of FOCUS_FORWARD, FOCUS_BACKWARD, FOCUS_LEFT, and FOCUS_RIGHT");
+        }
+        return handled;
+    }
+
+    /**
+     * Same as {@code arrowScroll(View.FOCUS_FORWARD}.
+     *
+     * @return {@code true} if it's handled
+     */
+    public boolean moveToForward() {
+        if (getAdapter() != null && getCurrentItem() < (getAdapter().getCount()-1)) {
+            setCurrentItem(getCurrentItem()+1, true);
+            return true;
+        }
+        return false;
+    }
+
+    /**
+     * Same as {@code arrowScroll(View.FOCUS_BACKWARD}.
+     *
+     * @return {@code true} if it's handled
+     */
+    public boolean moveToBackward() {
+        if (getCurrentItem() > 0) {
+            setCurrentItem(getCurrentItem()-1, true);
+            return true;
+        }
+        return false;
+    }
+
     private static int reversePosition(@NonNull PagerAdapter adapter, int position) {
         return adapter.getCount() - position - 1;
     }

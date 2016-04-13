@@ -16,7 +16,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        ReversibleViewPager viewPager = (ReversibleViewPager) findViewById(R.id.viewPager);
+        final ReversibleViewPager viewPager = (ReversibleViewPager) findViewById(R.id.viewPager);
         assert viewPager != null;
         viewPager.setAdapter(new PagerAdapter() {
             @Override
@@ -31,6 +31,14 @@ public class MainActivity extends AppCompatActivity {
                 assert textView != null;
                 textView.setText(String.valueOf(position));
                 container.addView(page);
+
+                page.setClickable(true);
+                page.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        viewPager.arrowScroll(View.FOCUS_LEFT);
+                    }
+                });
                 return page;
             }
 
