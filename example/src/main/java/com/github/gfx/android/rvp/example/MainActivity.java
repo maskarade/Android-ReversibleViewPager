@@ -1,15 +1,18 @@
 package com.github.gfx.android.rvp.example;
 
 import com.github.gfx.android.rvp.ReversibleViewPager;
+import com.github.gfx.android.rvp.example.databinding.PageBinding;
 
 import android.os.Bundle;
 import android.support.v4.view.PagerAdapter;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
+import android.util.SparseIntArray;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
+    SparseIntArray countMap = new SparseIntArray();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,27 +22,48 @@ public class MainActivity extends AppCompatActivity {
         final ReversibleViewPager viewPager = (ReversibleViewPager) findViewById(R.id.viewPager);
         assert viewPager != null;
         viewPager.setAdapter(new PagerAdapter() {
+            static final String TAG = "PagerAdapter";
+
             @Override
             public int getCount() {
                 return Integer.MAX_VALUE;
             }
 
             @Override
-            public Object instantiateItem(ViewGroup container, int position) {
-                View page = getLayoutInflater().inflate(R.layout.page, container, false);
-                TextView textView = (TextView) page.findViewById(R.id.text);
-                assert textView != null;
-                textView.setText(String.valueOf(position));
-                container.addView(page);
+            public int getItemPosition(Object object) {
+                return POSITION_NONE;
+            }
 
-                page.setClickable(true);
-                page.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public Object instantiateItem(ViewGroup container, int position) {
+                Log.d(TAG, "instantiateItem: " + position);
+                PageBinding page = PageBinding.inflate(getLayoutInflater(), container, false);
+
+                int count = countMap.get(position, 0);
+                countMap.put(position, count + 1);
+                page.counter.setText(String.valueOf(count));
+
+                page.counter.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        viewPager.getAdapter().notifyDataSetChanged();
+                    }
+                });
+
+                page.left.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
                         viewPager.arrowScroll(View.FOCUS_LEFT);
                     }
                 });
-                return page;
+                page.right.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        viewPager.arrowScroll(View.FOCUS_RIGHT);
+                    }
+                });
+                container.addView(page.getRoot());
+                return page.getRoot();
             }
 
             @Override

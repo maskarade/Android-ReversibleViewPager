@@ -154,7 +154,7 @@ public class ReversibleViewPager extends ViewPager {
 
         boolean rtlReady = adapter != null && reversed;
         if (rtlReady) {
-            adapter = new ReverseAdapter(adapter);
+            adapter = (adapter instanceof ReverseAdapter) ? adapter : new ReverseAdapter(adapter);
             registerRtlDataSetObserver(adapter);
         }
         super.setAdapter(adapter);
