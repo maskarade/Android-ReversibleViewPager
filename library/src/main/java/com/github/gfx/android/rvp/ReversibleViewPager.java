@@ -383,6 +383,7 @@ public class ReversibleViewPager extends ViewPager {
 
         @Override
         public void notifyDataSetChanged() {
+            super.notifyDataSetChanged();
             adapter.notifyDataSetChanged();
         }
 
