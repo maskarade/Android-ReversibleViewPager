@@ -2,7 +2,7 @@
 local.properties
 gradle.properties
 .idea/*.xml
-.idea/.*
+.idea/
 .idea/*/*.xml
 !.idea/copyright/*.xml
 !.idea/dictionaries/orma.xml
